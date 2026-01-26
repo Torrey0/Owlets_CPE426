@@ -2,12 +2,12 @@
 
 (* keep = "true", s = "true", dont_touch = "true", allow_opt_tiling = "false" *)
 module RingOscilator#(
-    parameter OscSize = 16
+    parameter OscSize = 4
 )(
 //    input CLK, 
     input enable,
-    input sel [3:0],
-    input bx [3:0],
+    input sel [OscSize-1:0],
+    input bx [OscSize-1:0],
     output logic generatedClock
 );
     
