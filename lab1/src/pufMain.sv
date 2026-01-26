@@ -12,7 +12,16 @@ module pufMain#(
     output logic doneLED
     );  
     logic reset;
-    assign reset = btnC;
+    
+    //reset to re-compute any time our input changes
+    always_comb begin 
+        if((storedSEL != switches[3:0]) || (storedBx != switches[7:4])) begin
+            reset = 1;
+        end else begin
+            reset = btnC;
+        end
+    end
+    
     `define counterSize ($clog2(counterMax + 100) + 1)    //ensure at least 100 value lee-way      
         
     logic [3:0] storedSEL;
