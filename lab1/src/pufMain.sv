@@ -1,8 +1,7 @@
 `timescale 1ns / 1ps
 
 module pufMain#(
-//    parameter LEDIntervalMS = 1000,
-    parameter counterMax = 10000000, //20 million, run each RO for .1 second
+    parameter counterMax = 10000000, //10 million, run each RO for .1 second
     parameter RO_Count = 9
 )(
     input CLK,  //100Mhz Clk
@@ -61,7 +60,6 @@ module pufMain#(
      
     
     logic [`counterSize - 1:0] nextCounter;
-//    logic nextEnableROs;
     logic nextOscCounterEn;
     logic nextOscCounterRst = 1;
     logic [$clog2(RO_Count): 0] nextROIndex; //which RO we are currently running    
@@ -96,7 +94,6 @@ module pufMain#(
         end
         
         counter <= nextCounter;
-//        enableROs <= nextEnableROs;
         ROIndex <= nextROIndex;
         oscCounterEn <= nextOscCounterEn;
         oscCounterRst <= nextOscCounterRst;
@@ -108,7 +105,6 @@ module pufMain#(
     
     always_comb begin
         nextROIndex = ROIndex;
-//        nextEnableROs = enableROs;
         nextCounter = counter;
         nextOscCounterEn = oscCounterEn;
         doneLED = 0;   //not done by default
@@ -117,7 +113,6 @@ module pufMain#(
         nextOscCounterRst = 0;
         case (state)
             ST_Start: begin
-//                nextEnableROs = 1;
                 nextOscCounterRst = 1;
                 nextCounter = 0;
                 nextROIndex = 0;
@@ -125,7 +120,6 @@ module pufMain#(
                 nextState = ST_Wait;
             end
             ST_Wait: begin
-//                nextEnableROs = 0; 
                 if (counter == 0) begin
                     nextOscCounterRst = 1;
                 end
@@ -143,16 +137,13 @@ module pufMain#(
              end
              ST_Next_RO: begin
                 nextOutputBit = (oscCounter[ROIndex[0]] > oscCounter[~ROIndex[0]]); //set our output bit
-//                nextOscCounterRst = 1;
                 if(ROIndex ==  RO_Count) begin
-//                    nextEnableROs = 0;
                     nextCounter = 0;
                     nextOscCounterEn = 0;
                     nextROIndex = 0;
                     nextState = ST_IDLE;
                 end else begin
                     nextROIndex = ROIndex + 1;
-//                    nextEnableROs = enableROs << 1; //move our enable for which osc is running
                     nextState = ST_Wait;
                 end
              end
