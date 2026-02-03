@@ -1,0 +1,367 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Mar 14 15:54:19 2024
+# Process ID: 41004
+# Current directory: C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.runs/impl_1
+# Command line: vivado.exe -log Rand_Num.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Rand_Num.tcl -notrace
+# Log file: C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.runs/impl_1/Rand_Num.vdi
+# Journal file: C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.runs/impl_1\vivado.jou
+# Running On: Jacktop, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 10, Host memory: 16858 MB
+#-----------------------------------------------------------
+source Rand_Num.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 448.582 ; gain = 164.543
+Command: link_design -top Rand_Num -part xc7a35tcpg236-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 856.797 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:12]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:12]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:80]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:80]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[7]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[7]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[6]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[6]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[5]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[5]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[4]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[4]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[3]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[3]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[2]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[2]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[1]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[1]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[0]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SSEG[0]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[3]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[3]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[2]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[2]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[1]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[1]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:108]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:108]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[0]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:109]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:109]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DISP[0]'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:110]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:110]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'EN'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'EN'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RST'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'RST'. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:121]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc:121]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/constrs_1/imports/Team_Final.srcs/Basys3_constraints_TeamFinal.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 983.449 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+4 Infos, 63 Warnings, 63 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 983.449 ; gain = 506.914
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.748 . Memory (MB): peak = 987.531 ; gain = 4.082
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1459.359 ; gain = 471.828
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1795.219 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1795.219 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1795.219 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1795.219 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1795.219 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: e93c4fe1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1795.219 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+21 Infos, 63 Warnings, 63 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 1795.219 ; gain = 811.770
+INFO: [runtcl-4] Executing : report_drc -file Rand_Num_drc_opted.rpt -pb Rand_Num_drc_opted.pb -rpx Rand_Num_drc_opted.rpx
+Command: report_drc -file Rand_Num_drc_opted.rpt -pb Rand_Num_drc_opted.pb -rpx Rand_Num_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.runs/impl_1/Rand_Num_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.runs/impl_1/Rand_Num_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.367 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 00000000
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1801.367 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 00000000
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1801.367 ; gain = 0.000
+ERROR: [Place 30-494] The design is empty
+Resolution: Check if opt_design has removed all the leaf cells of your design.  Check whether you have instantiated and connected all of the top level ports.
+Ending Placer Task | Checksum: 00000000
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1801.367 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+38 Infos, 63 Warnings, 63 Critical Warnings and 2 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 14 15:54:58 2024...

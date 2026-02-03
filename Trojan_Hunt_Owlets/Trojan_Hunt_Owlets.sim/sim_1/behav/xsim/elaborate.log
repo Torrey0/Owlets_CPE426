@@ -1,0 +1,31 @@
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_TB_behav xil_defaultlib.Top_TB xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'sign' [C:/Users/jacka/Documents/CPE133/Team_Final/Team_Final.srcs/sources_1/TOP.sv:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture my_clk_div of entity xil_defaultlib.clk_div2 [clk_div2_default]
+Compiling module xil_defaultlib.FSM
+Compiling module xil_defaultlib.LFSR
+Compiling module xil_defaultlib.ShiftRegister
+Compiling module xil_defaultlib.BCD2BIN
+Compiling module xil_defaultlib.Accumulator
+Compiling module xil_defaultlib.cnt_convert_14b
+Compiling module xil_defaultlib.cnt_convert_7b
+Compiling module xil_defaultlib.clk_divder
+Compiling module xil_defaultlib.univ_sseg
+Compiling module xil_defaultlib.TOP
+Compiling module xil_defaultlib.Top_TB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_TB_behav
