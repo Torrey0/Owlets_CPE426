@@ -5,10 +5,7 @@ module blinkLED#(
 )(
     output logic [0:0] leds = 1'b1
     );  
-    
-//    `define loopsPerMs 70000   //observed to be roughly accurate
-//    `define loopsPerMs 280000
-    `define loopsPerMs 800000
+    `define loopsPerMs 180000    //observed to be roughly accurate with RO Size = 4
 
     
     `define targetLoops (`loopsPerMs * LEDIntervalMS)
