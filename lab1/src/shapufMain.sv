@@ -13,7 +13,7 @@ module pufMain#(
     output logic doneLED,
     output logic [3:0] an,
     output logic [6:0] segs,
-    output logic sha_done
+    output logic hash_done
     );  
     logic reset;
     
@@ -142,6 +142,7 @@ module pufMain#(
         nextOscCounterEn = oscCounterEn;
         doneLED = 0;   //not done by default
         sseg_valid = 0;
+        hash_done = 0;
         
         nextOutputBit = ROIndex == 0 ? leds[ROIndex] : leds[ROIndex-1];
         nextOscCounterRst = 0;
@@ -195,9 +196,11 @@ module pufMain#(
              ST_HASH: begin
                 if(sha_done) begin
                     nextState = ST_DONE;
+                    hash_done = 1;
                 end
                 else begin
                     nextState = ST_HASH;
+                    hash_done = 0;
                 end
              end
              
@@ -214,6 +217,7 @@ module pufMain#(
                 end
                 sseg_valid = 1;
                 doneLED = 1;
+                hash_done = 1;
              end
              
              default: begin
