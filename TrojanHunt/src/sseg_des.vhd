@@ -42,6 +42,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity sseg_des is
     Port (        COUNT : in std_logic_vector(15 downto 0); 				  
                     CLK : in std_logic;
+                   SCLK : in std_logic;
 				  VALID : in std_logic;
                 DISP_EN : out std_logic_vector(3 downto 0);
                SEGMENTS : out std_logic_vector(6 downto 0)); -- Decimal Point is never used
@@ -52,26 +53,26 @@ end sseg_des;
 -- description of ssegment decoder
 -------------------------------------------------------------
 architecture my_sseg of sseg_des is
-	component clk_div
-        Port (  clk : in std_logic;
-               sclk : out std_logic);
-    end component;
+--	component clk_div
+--        Port (  clk : in std_logic;
+--               sclk : out std_logic);
+--    end component;
 	
     -- intermediate signal declaration -----------------------
-    signal   cnt_dig : std_logic_vector(1 downto 0); 
+    signal   cnt_dig : std_logic_vector(1 downto 0) := (others => '0'); 
     signal   digit : std_logic_vector (3 downto 0); 
-    signal   sclk : std_logic;
+--    signal   sclk : std_logic;
 begin	
 				 
     -- instantiation of clock divider -----------------
-    my_clk: clk_div 
-	port map (clk => clk,
-	          sclk => sclk ); 
+--    my_clk: clk_div 
+--	port map (clk => clk,
+--	          sclk => sclk ); 
 
     -- advance the count (used for display multiplexing) -----
-    process (SCLK)
+    process (sclk)
     begin
-        if (rising_edge(SCLK)) then 
+        if (rising_edge(sclk)) then 
             cnt_dig <= cnt_dig + 1; 
         end if; 
     end process; 
@@ -81,11 +82,11 @@ begin
 --    Adding new display settings - for cards display
 --    ========================================================================
 
-    process (cnt_dig, digit)
+    process (cnt_dig, digit, VALID)
     begin
         if VALID = '1' then
             case digit is
-                when "0000" => segments <= "0000000";  -- K
+                when "0000" => segments <= "1001000";  -- K/H / 0
                 when "0001" => segments <= "0001000";  -- A
                 when "0010"	=> segments <= "0010010";  -- 2
                 when "0011"	=> segments <= "0000110";  -- 3
@@ -96,8 +97,8 @@ begin
                 when "1000"	=> segments <= "0000000";  -- 8
                 when "1001"	=> segments <= "0000100";  -- 9
                 when "1010" => segments <= "0000001";  -- T
-                when "1011" => segments <= "0000110";  -- J
-                when "1100" => segments <= "0001100";  -- q
+                when "1011" => segments <= "0000110";  -- J / 11
+                when "1100" => segments <= "0001100";  -- q / 12
 --                when "1101" => segments <= "1000010";  -- d
 --                when "1110" => segments <= "0110000";  -- E
 --                when "1111"	=> segments <= "0111000";  -- F
@@ -132,36 +133,36 @@ end my_sseg;
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
------------------------------------------------------------------------
--- Module to divide the clock 
------------------------------------------------------------------------
-entity clk_div is
-    Port (  clk : in std_logic;
-           sclk : out std_logic);
-end clk_div;
+--library IEEE;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use IEEE.STD_LOGIC_ARITH.ALL;
+--use IEEE.STD_LOGIC_UNSIGNED.ALL;
+-------------------------------------------------------------------------
+---- Module to divide the clock 
+-------------------------------------------------------------------------
+--entity clk_div is
+--    Port (  clk : in std_logic;
+--           sclk : out std_logic);
+--end clk_div;
 
-architecture my_clk_div of clk_div is
-   constant max_count : integer := (2200);  
-   signal tmp_clk : std_logic := '0'; 
-begin
-   my_div: process (clk,tmp_clk)              
-      variable div_cnt : integer := 0;   
-   begin
-      if (rising_edge(clk)) then   
-         if (div_cnt = MAX_COUNT) then 
-            tmp_clk <= not tmp_clk; 
-            div_cnt := 0; 
-         else
-            div_cnt := div_cnt + 1; 
-         end if; 
-      end if; 
-      sclk <= tmp_clk; 
-   end process my_div; 
-end my_clk_div;
+--architecture my_clk_div of clk_div is
+--   constant max_count : integer := (2200);  
+--   signal tmp_clk : std_logic := '0'; 
+--begin
+--   my_div: process (clk,tmp_clk)              
+--      variable div_cnt : integer := 0;   
+--   begin
+--      if (rising_edge(clk)) then   
+--         if (div_cnt = MAX_COUNT) then 
+--            tmp_clk <= not tmp_clk; 
+--            div_cnt := 0; 
+--         else
+--            div_cnt := div_cnt + 1; 
+--         end if; 
+--      end if; 
+--      sclk <= tmp_clk; 
+--   end process my_div; 
+--end my_clk_div;
 
 
 

@@ -4,7 +4,7 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 
-##Modified by: Jack Bergfeld
+##Modified by: Jack Karpinski
 
 ## Clock signal
 set_property PACKAGE_PIN W5 [get_ports CLK]							
@@ -82,45 +82,45 @@ set_property PACKAGE_PIN L1 [get_ports {LED[15]}]
 	
 	
 ##7 segment display
-set_property PACKAGE_PIN W7 [get_ports {SSEG[7]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[7]}]
-set_property PACKAGE_PIN W6 [get_ports {SSEG[6]}]					
+set_property PACKAGE_PIN W7 [get_ports {SSEG[6]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[6]}]
-set_property PACKAGE_PIN U8 [get_ports {SSEG[5]}]					
+set_property PACKAGE_PIN W6 [get_ports {SSEG[5]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[5]}]
-set_property PACKAGE_PIN V8 [get_ports {SSEG[4]}]					
+set_property PACKAGE_PIN U8 [get_ports {SSEG[4]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[4]}]
-set_property PACKAGE_PIN U5 [get_ports {SSEG[3]}]					
+set_property PACKAGE_PIN V8 [get_ports {SSEG[3]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[3]}]
-set_property PACKAGE_PIN V5 [get_ports {SSEG[2]}]					
+set_property PACKAGE_PIN U5 [get_ports {SSEG[2]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[2]}]
-set_property PACKAGE_PIN U7 [get_ports {SSEG[1]}]					
+set_property PACKAGE_PIN V5 [get_ports {SSEG[1]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[1]}]
-
-set_property PACKAGE_PIN V7 [get_ports {SSEG[0]}]							
+set_property PACKAGE_PIN U7 [get_ports {SSEG[0]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[0]}]
 
-set_property PACKAGE_PIN U2 [get_ports {DISP[3]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[3]}]
-set_property PACKAGE_PIN U4 [get_ports {DISP[2]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[2]}]
-set_property PACKAGE_PIN V4 [get_ports {DISP[1]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[1]}]
-set_property PACKAGE_PIN W4 [get_ports {DISP[0]}]					
+#set_property PACKAGE_PIN V7 [get_ports {SSEG[0]}]							
+#	set_property IOSTANDARD LVCMOS33 [get_ports {SSEG[0]}]
+
+set_property PACKAGE_PIN U2 [get_ports {DISP[0]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[0]}]
+set_property PACKAGE_PIN U4 [get_ports {DISP[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[1]}]
+set_property PACKAGE_PIN V4 [get_ports {DISP[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[2]}]
+set_property PACKAGE_PIN W4 [get_ports {DISP[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {DISP[3]}]
 
 
 ##Buttons
-#set_property PACKAGE_PIN U18 [get_ports btnC]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnC]
-#set_property PACKAGE_PIN T18 [get_ports btnU]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnU]
+set_property PACKAGE_PIN U18 [get_ports {HIT}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {HIT}]
+set_property PACKAGE_PIN T18 [get_ports {STAND}]						
+	set_property IOSTANDARD LVCMOS33 [get_ports {STAND}]
 set_property PACKAGE_PIN W19 [get_ports {EN}]						
 	set_property IOSTANDARD LVCMOS33 [get_ports {EN}]
 set_property PACKAGE_PIN T17 [get_ports {RST}]						
 	set_property IOSTANDARD LVCMOS33 [get_ports {RST}]
-#set_property PACKAGE_PIN U17 [get_ports btnD]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnD]
+set_property PACKAGE_PIN U17 [get_ports {SW}]		  	
+	set_property IOSTANDARD LVCMOS33 [get_ports {SW}]
  
 
 

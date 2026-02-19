@@ -23,8 +23,9 @@
 module LFSR(
     input CLK,
     input RST,
+    input USED,
     output logic [3:0] RND,
-    inout logic RDY
+    output logic RDY
     );
     
     //making the cards
@@ -42,34 +43,49 @@ module LFSR(
             assign startdeck[i] = 0; //extra space
         end
     end
-    assign indeck = startdeck;
+//    assign indeck = startdeck;
     endgenerate 
     
+    logic [3:0] card_out;
+    logic card_rdy = 0, old_card_rdy, hRDY = 0;
     logic [7:0] random = 8'hff; // sets random originally to all 1s
     logic [2:0] count = 0; // measures when it has run through all operations
     assign feedback = random[7] ^ random[5] ^ random[4] ^ random[3]; // creates a feedback that xors parts of the random outputs in order to generate pseudorandom numbers
     
-    always_ff @(posedge CLK, RST)
+    assign RDY = ~USED & hRDY;
+    
+    always_ff @(posedge CLK)
     begin
-    if(RST)begin
-        indeck <= startdeck;
-    end
-    if ((count == 6) & ~RDY) // if count reaches 6  
-        begin
-        count <= 0;
-        if(indeck[{random[7:4],random[0],random[3:2]}] == 1) // check if card is in deck
+        old_card_rdy <= card_rdy; 
+        if(~old_card_rdy & card_rdy) begin  //rising edge card_rdy
+            hRDY <= 1;
+        end else begin
+            hRDY <= RDY;
+        end
+    
+        if (count > 5 & ~RDY) // if count reaches 6  
             begin
-            indeck[{random[7:4],random[0],random[3:2]}] <= 0;
-            RND <= cardlist[{random[7:4],random[0],random[3:2]}]; // set output to random card
-            RDY <= 1;
+            count <= 0;
+            if(indeck[{random[7:4],random[0],random[3:2]}] == 1) // check if card is in deck
+                begin
+                indeck[{random[7:4],random[0],random[3:2]}] <= 0;
+    //            RND <= card_out;
+                RND <= cardlist[{random[7:4],random[0],random[3:2]}]; // set output to random card
+                card_rdy <= 1;
+                end
             end
+        else
+            begin 
+            count <= count + 1; // otherwise increment count
+            random <= {random[6:0],feedback}; //and change random
+            RND <= RND;
+            card_rdy <= 0;
+            end
+            
+        if(RST)begin
+            indeck <= startdeck;
         end
-    else 
-        begin  
-        count <= count + 1; // otherwise increment count
-        random <= {random[6:0],feedback}; //and change random
-        RND <= RND;
-        end
+        
     end
     
 endmodule
