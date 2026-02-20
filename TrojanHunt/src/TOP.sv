@@ -42,14 +42,16 @@ module TOP(
  //SW control
  assign DISP_IN = (DEAL) ? DOUT : POUT;
  always_ff @(posedge CLK) begin
-    if(~SW_OLD & SW_DEB) DEAL = ~DEAL;
+    if(RST) DEAL <= 0;
+    else if(~SW_OLD & SW_DEB) DEAL <= ~DEAL;
+    else DEAL <= DEAL;
     SW_OLD <= SW_DEB;
  end
 
     //connections for all of the modules
-    DebOneShot HIT_CNTRL    (.IN(HIT), .CLK(CLK), .OUT(HIT_DEB));
-    DebOneShot SW_CNTRL    (.IN(SW), .CLK(CLK), .OUT(SW_DEB));
-    DebOneShot STAND_CNTRL    (.IN(STAND), .CLK(CLK), .OUT(STAND_DEB));
+    DebOneShot HIT_CNTRL    (.IN(HIT), .RST(RST),.CLK(CLK), .OUT(HIT_DEB));
+    DebOneShot SW_CNTRL    (.IN(SW), .RST(RST), .CLK(CLK), .OUT(SW_DEB));
+    DebOneShot STAND_CNTRL    (.IN(STAND), .RST(RST), .CLK(CLK), .OUT(STAND_DEB));
     clk_div2 Slow            (.CLK(CLK), .SCLK(SCLK));
     FSM  FSM (.CLK(CLK), .EN(EN), .RDY(RDY), .RST(RST), .HIT(HIT_DEB),
             .STAND(STAND_DEB), .dcnt(DCNT), .pcnt(PCNT), .card_used(USED), 
@@ -57,7 +59,7 @@ module TOP(
     LFSR Randn             (.CLK(CLK), .RST(RST), .USED(USED), .RND(D1), .RDY(RDY));
     BJRegister P_HAND      (.CLK(CLK), .CLR(RST), .LD(PLD), .POS(POS), .D(D1), .Q(POUT), .CNT(PCNT));  
     BJRegister D_HAND      (.CLK(CLK), .CLR(RST), .LD(DLD), .POS(POS), .D(D1), .Q(DOUT), .CNT(DCNT));  
-    sseg_des Disp           (.COUNT(DISP_IN), .CLK(CLK), .SCLK(SCLK), .VALID(1'b1), .SEGMENTS(SSEG), .DISP_EN(DISP));  
+    sseg_des Disp           (.COUNT(DISP_IN), .SCLK(SCLK), .VALID(1'b1), .SEGMENTS(SSEG), .DISP_EN(DISP));  
       
      
     

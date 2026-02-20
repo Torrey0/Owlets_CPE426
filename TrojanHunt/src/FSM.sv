@@ -29,8 +29,8 @@ module FSM(
     output logic [15:0] LED
     );
     
-    logic dealer = 0, next_dealer, LD, STing;// HIT_OLD, STAND_OLD,HIT_VAL,STAND_VAL;
-    logic [1:0] ppos_reg, dpos_reg,next_ppos_reg,next_dpos_reg;
+    logic dealer = 0, next_dealer, LD, STing, next_STing, inc_ppos, inc_dpos;
+    logic [1:0] ppos_reg, dpos_reg;
     logic [15:0] LEDs;
     
     typedef enum {START, DEAL, PLAY, PEND, GEND, ST_DEAL} STATES;
@@ -46,122 +46,142 @@ module FSM(
     begin
     if(RST) begin
         NS = START;
+    end else begin
+        NS = PS;
     end
+    
+    inc_ppos = 0;
+    inc_dpos = 0;      
+    LD = 0;
+    next_dealer = 0;
+    card_used = 0;
+    next_STing = 0;
     
     case (PS)
         START:
             begin
             LEDs = 16'h0001;
-            next_ppos_reg = 2'b00;
-            next_dpos_reg = 2'b00;          
-            LD = 0;
-            next_dealer = 0;
-            card_used = 0;
-            STing = 1;
+            inc_ppos = 0;
+            inc_dpos = 0;
+            next_STing = 1;
             
             if(HIT) begin
                 NS = ST_DEAL;
+            end else begin
+                NS = PS;
             end
-            end
+        end
             
         ST_DEAL:
             begin
             LEDs = 16'h0002;
-            LD = 0;
-            card_used = 0;
+            next_STing = 1;
             if(dpos_reg == 2'b10) begin
-                STing = 0;
+                next_STing = 0;
                 NS = PLAY;
             end else if(RDY) begin
+                if(dpos_reg < ppos_reg) next_dealer = 1;
+                else next_dealer = 0;
                 NS = DEAL;
             end else begin
                 NS = PS;
             end
-            end
+        end
         
         DEAL:
             begin
             LEDs = 16'h0004;
             card_used = 1;
+            LD = 1; 
             if(dealer) begin
                 if(STing) begin
-                    next_dealer = 0;
+                    next_STing = 1;
                     NS = ST_DEAL;
                 end else begin
+                    next_STing = 0;
                     NS = PEND;
                 end
-                next_dpos_reg = dpos_reg + 2'b01;
+                inc_dpos = 1;
             end else begin
                 if(STing) begin
-                    next_dealer = 1;
                     NS = ST_DEAL;
+                    next_STing = 1;
                 end else begin
+                    next_STing = 0;
                     NS = PLAY;
                 end
-                next_ppos_reg = ppos_reg + 2'b01;
+                inc_ppos = 1;
             end
-            LD = 1; 
-            end
+        end
+        
         PLAY:
             begin
             LEDs = 16'h0008;
-            LD = 0;
-            card_used = 0;
+            
             if(pcnt > 5'h15) begin
                 NS = GEND;
             end else if(HIT & RDY) begin
+                next_dealer = 0;
                 NS = DEAL;
             end else if(STAND) begin
-                next_dealer = 1;
                 NS = PEND;
             end else begin
                 NS = PS;
             end
-            end
+        end
+        
         PEND:
             begin
             LEDs = 16'h0010;
             card_used = 0;
             if(dcnt < 5'h11) begin
-//                next_dpos_reg = dpos_reg + 2'b01;
+                next_dealer = 1;
                 LD = 0; 
                 card_used = 0;
                 NS = DEAL;
             end else begin
                 NS = GEND;
             end
-            end
+        end
+        
         GEND:
             begin
             LEDs = 16'h0020;
             NS = PS;
             LD = 0;
-            if((pcnt > dcnt & pcnt < 21)| (dcnt >21 & pcnt < 22)) begin
+            if((pcnt > dcnt & pcnt < 22)| (dcnt > 21 & pcnt < 22)) begin
                 LEDs = 16'hFFFF;
             end else begin
                 LEDs = 16'h5555;
             end
-            end
+        end
+        
         default: 
             begin
             NS = START;
-            next_ppos_reg = 2'b00;
-            next_dpos_reg = 2'b00;          
+            inc_ppos = 0;
+            inc_dpos = 0;         
             LD = 0;
             next_dealer = 0;
             card_used = 0;
-            STing = 0;
+            next_STing = 0;
             LEDs = 16'h0000;
             end
     endcase 
     end
     
     always_ff @(posedge CLK) begin
-        if(EN | RST) PS <= START;
-        else PS <= NS;
-        ppos_reg <= next_ppos_reg;
-        dpos_reg <= next_dpos_reg;
+        if(EN | RST) begin
+            PS <= START;
+            ppos_reg <= 2'b00;
+            dpos_reg <= 2'b00;
+        end else begin
+            PS <= NS;
+            ppos_reg <= ppos_reg + inc_ppos;
+            dpos_reg <= dpos_reg + inc_dpos;
+        end
         dealer <= next_dealer;
+        STing <= next_STing;
 //        HIT_OLD <= HIT;
 //        STAND_OLD <= STAND;
 //        if(~HIT_OLD & HIT) HIT_VAL <= 1;

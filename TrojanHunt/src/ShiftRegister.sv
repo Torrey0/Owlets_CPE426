@@ -15,7 +15,7 @@ module BJRegister( //MODIFIED from original
     input [3:0] D,
     input [1:0] POS,
     output logic [15:0] Q,
-    output logic [4:0] CNT
+    output logic [5:0] CNT
     );
     
     logic [4:0] D_val1, D_val2, D_val3, D_val4;
@@ -41,18 +41,18 @@ module BJRegister( //MODIFIED from original
             default: D_val1 = 0;
         endcase
         case(Q[7:4]) //second value
-            0: D_val2 = 10; 1: D_val2 = 1; 2: D_val2 = 2; 3: D_val2 = 3; 4: D_val2 = 4; 5: D_val2 = 5; 6: D_val2 = 6;
-            7: D_val2 = 7; 8: D_val2 = 8; 9: D_val2 = 9; 10: D_val2 = 10; 11: D_val2 = 10; 12: D_val2 = 10;
-            default: D_val2 = 0;
+            0: D_val2 = 4'ha; 1: D_val2 = 4'h1; 2: D_val2 = 4'h2; 3: D_val2 = 4'h3; 4: D_val2 = 4'h4; 5: D_val2 = 4'h5; 6: D_val2 = 4'h6; 
+            7: D_val2 = 4'h7; 8: D_val2 = 4'h8; 9: D_val2 = 4'h9; 10: D_val2 = 4'ha; 11: D_val2 = 4'ha; 12: D_val2 = 4'ha;
+        default: D_val2 = 0;
         endcase
         case(Q[11:8]) //thrid value
-            0: D_val3 = 10; 1: D_val3 = 1; 2: D_val3 = 2; 3: D_val3 = 3; 4: D_val3 = 4; 5: D_val3 = 5; 6: D_val3 = 6;
-            7: D_val3 = 7; 8: D_val3 = 8; 9: D_val3 = 9; 10: D_val3 = 10; 11: D_val3 = 10; 12: D_val3 = 10;
+            0: D_val3 = 4'ha; 1: D_val3 = 4'h1; 2: D_val3 = 4'h2; 3: D_val3 = 4'h3; 4: D_val3 = 4'h4; 5: D_val3 = 4'h5; 6: D_val3 = 4'h6; 
+            7: D_val3 = 4'h7; 8: D_val3 = 4'h8; 9: D_val3 = 4'h9; 10: D_val3 = 4'ha; 11: D_val3 = 4'ha; 12: D_val3 = 4'ha;
             default: D_val3 = 0;
         endcase
         case(Q[15:12]) //fourth value
-            0: D_val4 = 10; 1: D_val4 = 1; 2: D_val4 = 2; 3: D_val4 = 3; 4: D_val4 = 4; 5: D_val4 = 5; 6: D_val4 = 6;
-            7: D_val4 = 7; 8: D_val4 = 8; 9: D_val4 = 9; 10: D_val4 = 10; 11: D_val4 = 10; 12: D_val4 = 10;
+            0: D_val4 = 4'ha; 1: D_val4 = 4'h1; 2: D_val4 = 4'h2; 3: D_val4 = 4'h3; 4: D_val4 = 4'h4; 5: D_val4 = 4'h5; 6: D_val4 = 4'h6; 
+            7: D_val4 = 4'h7; 8: D_val4 = 4'h8; 9: D_val4 = 4'h9; 10: D_val4 = 4'ha; 11: D_val4 = 4'ha; 12: D_val4 = 4'ha;
             default: D_val4 = 0;
         endcase
         

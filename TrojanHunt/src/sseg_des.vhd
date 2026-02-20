@@ -41,7 +41,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --------------------------------------------------------------
 entity sseg_des is
     Port (        COUNT : in std_logic_vector(15 downto 0); 				  
-                    CLK : in std_logic;
+--                    CLK : in std_logic;
                    SCLK : in std_logic;
 				  VALID : in std_logic;
                 DISP_EN : out std_logic_vector(3 downto 0);
