@@ -30,6 +30,7 @@
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
+                    
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -40,7 +41,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 -- low and configured ABCEDFG in "segment" output. 
 --------------------------------------------------------------
 entity sseg_des is
-    Port (        COUNT : in std_logic_vector(15 downto 0); 				  
+    Port (        COUNT : in std_logic_vector(19 downto 0); 				  
 --                    CLK : in std_logic;
                    SCLK : in std_logic;
 				  VALID : in std_logic;
@@ -60,7 +61,7 @@ architecture my_sseg of sseg_des is
 	
     -- intermediate signal declaration -----------------------
     signal   cnt_dig : std_logic_vector(1 downto 0) := (others => '0'); 
-    signal   digit : std_logic_vector (3 downto 0); 
+    signal   digit : std_logic_vector (4 downto 0); 
 --    signal   sclk : std_logic;
 begin	
 				 
@@ -86,22 +87,28 @@ begin
     begin
         if VALID = '1' then
             case digit is
-                when "0000" => segments <= "1001000";  -- K/H / 0
-                when "0001" => segments <= "0001000";  -- A
-                when "0010"	=> segments <= "0010010";  -- 2
-                when "0011"	=> segments <= "0000110";  -- 3
-                when "0100"	=> segments <= "1001100";  -- 4
-                when "0101"	=> segments <= "0100100";  -- 5
-                when "0110"	=> segments <= "0100000";  -- 6
-                when "0111"	=> segments <= "0001111";  -- 7
-                when "1000"	=> segments <= "0000000";  -- 8
-                when "1001"	=> segments <= "0000100";  -- 9
-                when "1010" => segments <= "0000001";  -- T
-                when "1011" => segments <= "0000110";  -- J / 11
-                when "1100" => segments <= "0001100";  -- q / 12
---                when "1101" => segments <= "1000010";  -- d
---                when "1110" => segments <= "0110000";  -- E
---                when "1111"	=> segments <= "0111000";  -- F
+                when "00000" => segments <= "0000001";  -- 0
+                when "00001" => segments <= "1001111";  -- 1
+                when "00010" => segments <= "0010010";  -- 2
+                when "00011" => segments <= "0000110";  -- 3
+                when "00100" => segments <= "1001100";  -- 4
+                when "00101" => segments <= "0100100";  -- 5
+                when "00110" => segments <= "0100000";  -- 6
+                when "00111" => segments <= "0001111";  -- 7
+                when "01000" => segments <= "0000000";  -- 8
+                when "01001" => segments <= "0000100";  -- 9
+                when "01010" => segments <= "0001000";  -- A
+                when "01011" => segments <= "1100000";  -- b
+                when "01100" => segments <= "0110001";  -- C
+                when "01101" => segments <= "1000010";  -- d
+                when "01110" => segments <= "0110000";  -- E
+                when "01111" => segments <= "0111000";  -- F
+                when "10000" => segments <= "0000001";  -- T
+                when "10001" => segments <= "0000110";  -- J / 11
+                when "10010" => segments <= "0001100";  -- q / 12
+                when "10011" => segments <= "1001000";  -- K/H / 0
+                when "10100" => segments <= "0001000";  -- A
+                when "10101" => segments <= "0000100";  -- g (gamble)
                 when others	=> segments <= "1111111";  -- BLANK, should not happen
             end case;
         else
@@ -120,11 +127,11 @@ begin
 	process (cnt_dig, COUNT)    
 	begin
         case cnt_dig is
-            when "00" => digit <= COUNT(3 downto 0); 
-            when "01" => digit <= COUNT(7 downto 4); 
-            when "10" => digit <= COUNT(11 downto 8); 
-            when "11" => digit <= COUNT(15 downto 12); 
-            when others => digit <= "0000"; 
+            when "00" => digit <= COUNT(4 downto 0); 
+            when "01" => digit <= COUNT(9 downto 5); 
+            when "10" => digit <= COUNT(14 downto 10); 
+            when "11" => digit <= COUNT(19 downto 15); 
+            when others => digit <= "00000"; 
         end case; 
 	end process;
 			

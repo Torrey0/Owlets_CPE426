@@ -46,7 +46,7 @@ module LFSR(
 //    assign indeck = startdeck;
     endgenerate 
     
-    logic [3:0] card_out;
+//    logic [3:0] card_out;
     logic card_rdy = 0, old_card_rdy, hRDY = 0;
     logic [7:0] random = 8'hff; // sets random originally to all 1s
     logic [2:0] count = 0; // measures when it has run through all operations
@@ -66,11 +66,12 @@ module LFSR(
         if (count > 5 & ~RDY) // if count reaches 6  
             begin
             count <= 0;
-            if(indeck[{random[7:4],random[0],random[3:2]}] == 1) // check if card is in deck
+            //this was out of boundsing chat
+            if(indeck[{random[7:4],random[0],random[3:2]} % 52] == 1) // check if card is in deck
                 begin
-                indeck[{random[7:4],random[0],random[3:2]}] <= 0;
+                indeck[{random[7:4],random[0],random[3:2]} % 52] <= 0;
     //            RND <= card_out;
-                RND <= cardlist[{random[7:4],random[0],random[3:2]}]; // set output to random card
+                RND <= cardlist[{random[7:4],random[0],random[3:2]} % 52]; // set output to random card
                 card_rdy <= 1;
                 end
             end
