@@ -37,7 +37,7 @@ module TOP(
  logic [5:0] DCNT, PCNT;
  logic [1:0] POS; 
  logic [3:0] Random; //Rand_card
- logic SCLK, USED, RDY;
+ logic SCLK1, SCLK2, USED, RDY;
  
  logic btnU_DEB, btnL_DEB, btnC_DEB, btnR_DEB, btnD_DEB;
  //in game buttons.
@@ -95,10 +95,11 @@ logic handReset;
 
     Design_State_Ctrl ctrl  (.CLK(CLK), .RST(RST), .gameEnd(gameEnd), .btnC(btnC_pulse), .gameStart(gameStart), .menu_En(menu_En), .shuffle(shuffle));
     
-    clk_div2 Slow            (.CLK(CLK), .SCLK(SCLK));
+    clk_div2 Slow            (.CLK(CLK), .SCLK(SCLK1));
+    CLK_Div Slower            (.CLK(CLK), .SCLK(SCLK2));
     FSM  FSM (.CLK(CLK), .START(gameStart), .RDY(RDY), .RST(RST), .HIT(HIT_DEB),
             .STAND(STAND_DEB), .dcnt(DCNT), .pcnt(PCNT), .card_used(USED), 
-            .pld(PLD), .dld(DLD), .playerWin(playerWin), .dealerWin(dealerWin), .gameEnd(gameEnd), .LED(LED[14:0]), .POS(POS));
+            .pld(PLD), .dld(DLD), .playerWin(playerWin), .dealerWin(dealerWin), .gameEnd(gameEnd), .LED(), .POS(POS));
     LFSR Randn             (.CLK(CLK), .RST(RST_deck), .USED(USED), .RND(Random), .RDY(RDY));
     BJRegister P_HAND      (.CLK(CLK), .CLR(handReset), .LD(PLD), .POS(POS), .D(Random), .Q(POUT), .CNT(PCNT));  
     BJRegister D_HAND      (.CLK(CLK), .CLR(handReset), .LD(DLD), .POS(POS), .D(Random), .Q(DOUT), .CNT(DCNT)); 
@@ -106,8 +107,8 @@ logic handReset;
             .btnU(btnU_DEB),  .btnL(btnL_DEB), .btnC(btnC_DEB), .btnR(btnR_DEB), .btnD(btnD_DEB), 
             .playerWin(playerWin), .dealerWin(dealerWin), .menuDisp(menuDisp));
     SSEG_MUX sseg_sel   (.CLK(CLK), .DEAL(DEAL), .inGame(inGame), .POUT(POUT), .DOUT(DOUT), .menuDisp(menuDisp), .DISP_IN(DISP_IN));
-    sseg_des Disp           (.COUNT(DISP_IN), .SCLK(SCLK), .VALID(1'b1), .SEGMENTS(SSEG), .DISP_EN(DISP));  
-      
+    sseg_des Disp           (.COUNT(DISP_IN), .SCLK(SCLK1), .VALID(1'b1), .SEGMENTS(SSEG), .DISP_EN(DISP));  
+    LED_Animation leds (.CLK(SCLK2), .START(gameStart), .DEAL(PLD), .HIT(HIT_DEB), .RND(Random), .LEDS(LED[14:0]));
      
     
 endmodule
