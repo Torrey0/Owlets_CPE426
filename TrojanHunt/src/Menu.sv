@@ -89,7 +89,11 @@ module Menu(
         gambleIncrement = 0;
         nextDisplayGamble = displayGamble;
         targetNextGamble = gamble;
-        nextGamble = gamble;
+        if(gamble > balance) begin
+            nextGamble = balance; //ensure after a loss, that they cant end up gambling more than they have
+        end else begin
+            nextGamble = gamble; //default value
+        end
         //
         
         if(playerWin) begin

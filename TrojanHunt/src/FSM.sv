@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: Jack Karpinski
-// 
-// Create Date: 03/12/2024 12:30:36 AM
-// Design Name: 
-// Module Name: FSM
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module FSM(
     input CLK, START, RDY, RST, //start and RST do samething. take it up with the foreman idk.
@@ -34,7 +14,7 @@ module FSM(
     
     logic dealer = 0, next_dealer, LD, STing, next_STing, inc_ppos, inc_dpos;
     logic [2:0] ppos_reg;
-    logic [1:0] dpos_reg;
+    logic [2:0] dpos_reg;
     logic [15:0] LEDs;
     
     typedef enum {START_ST, DEAL, PLAY, PEND, GEND, ST_DEAL, IDLE} STATES;
@@ -136,7 +116,7 @@ module FSM(
                 begin
                 LEDs = 16'h0010;
                 card_used = 0;
-                if(dcnt < 5'h11) begin
+                if(dcnt < 5'h11 && dpos_reg < 4) begin
                     if (RDY) begin    
                         next_dealer = 1;
                         LD = 0; 

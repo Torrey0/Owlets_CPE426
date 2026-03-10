@@ -2,7 +2,7 @@
 -- CPE 133 VHDL File: universal_sseg_dec.vhd
 --
 -- Company: Ratface Engineering
--- Engineer: Samuel Cheng, James Ratner Edited by Jack Karpinski
+-- Engineer: Samuel Cheng, James Ratner
 -- 
 -- 
 -- Description: Special seven segment display driver. This file 
@@ -104,7 +104,7 @@ begin
                 when "01110" => segments <= "0110000";  -- E
                 when "01111" => segments <= "0111000";  -- F
                 when "10000" => segments <= "0000001";  -- T
-                when "10001" => segments <= "0000110";  -- J / 11
+                when "10001" => segments <= "1000011";  -- J / 11
                 when "10010" => segments <= "0001100";  -- q / 12
                 when "10011" => segments <= "1001000";  -- K/H / 0
                 when "10100" => segments <= "0001000";  -- A

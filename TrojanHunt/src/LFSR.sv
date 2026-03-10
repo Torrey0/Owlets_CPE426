@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: Cal Poly
-// Engineer: Jack Karpinski
-// 
-// Create Date: 03/14/2024 09:29:53 PM
-// Design Name: 
-// Module Name: LFSR
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: Based on LFSR random generator by SimpleFPGA blog but translated into systemverilog and heavily modified by Jack Karpinski
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module LFSR(
     input CLK,

@@ -1,16 +1,6 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Engineer: Bridget Benson (modified heavily by Jack Karpinski)
-// Create Date: 10/26/2018 01:04:29 PM
-// Description: 8 bit shift register 
-// SEL: 0 - HOLD
-//      1 - LOAD
-//      2 - LEFT SHIFT
-//      3 - RIGHT SHIFT
-//////////////////////////////////////////////////////////////////////////////////
 
 //for mapping face cards onto custom symbols for SSEG
-`define AceDisplay 20
 `define faceCardDisplayOffset 8
 
 module BJRegister( //MODIFIED from original
